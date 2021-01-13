@@ -1,11 +1,11 @@
 
-import './App.css';
-import searchField from './searchField';
+import '../App.css';
+import SearchField from './SearchField'
+import React from 'react'
 
 
-
-class App extends React.Component() {
-  constructor(){
+class App extends React.Component {
+  constructor(props){
     super(props)
     this.state = {
       gifLink: ""
@@ -18,6 +18,7 @@ class App extends React.Component() {
      this.setState ({
        gifLink: value
      })
+     console.log(value)
    }
 
 
@@ -29,7 +30,7 @@ class App extends React.Component() {
   return (
  <div>
 
-   <searchField 
+   <SearchField 
    setGiflink = {this.setGiflink}
    />
  </div>

@@ -4,3 +4,22 @@ h1
   color: black;
   font-family:sans-serif;
 }
+
+form{
+  text-align: center;
+}
+button {
+  margin-top: 10px;
+  margin-right: 10px;
+  
+}
+
+.searchDiv{
+  text-align: center;
+  text-shadow: 20px;
+}
+.resize{
+  width: 200px;
+  height: auto;
+  margin-top: 10px;
+}
