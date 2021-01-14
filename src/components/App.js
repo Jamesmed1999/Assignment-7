@@ -13,20 +13,7 @@ class App extends React.Component {
     };
     this.setGif = this.setGifs.bind(this);
   }
-/*   setGiflink = (value) => {
-    this.setState({
-      gifLink: value
-    });
-    console.log(value);
-    console.log(this.state.gifLink);
-    fetch(this.state.gifLink)
-      .then((response) => response.json())
-      .then((res) => this.setState({ gifs: res.data }));
-    console.log(this.state.gifs);
-    fetch(value)
-      .then((response) => response.json())
-      .then((res) => this.setState({ gifs: res.data }));
-  }; */
+
   setGifs(value2) {
     
       this.setState({
@@ -37,6 +24,8 @@ class App extends React.Component {
       });
       
   }
+
+  
   componentDidMount() {
     fetch(
       "https://api.giphy.com/v1/gifs/trending?api_key=cD5OcHcYruMyAgmdd08Pem21ciNrHk8A"
@@ -48,21 +37,32 @@ class App extends React.Component {
 
   render() {
     let cardArray = [];
+    let random = 0;
+    console.log(this.state.gifs);
+    console.log(this.state.gifs.length);
+    if(this.state.gifs.length === undefined) 
+    {
+        random =5;
+    }
+
     if (this.state.gifs.length >= 1) {
       for (let i = 0; i < this.state.gifs.length; i++) {
         cardArray.push(
           <GifCard data={this.state.gifs[i].images.original.url} />
         );
         //console.log(this.state.gifs[i].images.original.url);
-        console.log(this.state.gifs);
       }
-     
-    }
-    else if(this.state.gifs.length === 0)
-    {
-      
     }
     
+    else if (random === 5)
+    {
+      cardArray.push(
+        <GifCard data={this.state.gifs.images.original.url} 
+        />
+      );
+    }
+   
+
     return (
       <div>
         <SearchField  setGifs={this.setGif} />

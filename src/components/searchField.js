@@ -42,7 +42,7 @@ function SearchField(props) {
       </form>
       <button onClick={(e) => onSubmit(e,0)}>Search</button>
       <button onClick={(e) => onSubmit(e,1)} value="1">
-        trending Search
+        Trending Search
       </button>
       <button onClick={(e) => onSubmit(e,2)} value="2">
         Random Search

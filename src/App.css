@@ -24,6 +24,9 @@ button {
   margin-top: 10px;
 }
 .img-div{
+  text-align: center;
   
-  flex-flow: row wrap;
+}
+div{
+  background-color: lightgrey;
 }
