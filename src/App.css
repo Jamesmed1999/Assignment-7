@@ -23,3 +23,7 @@ button {
   height: auto;
   margin-top: 10px;
 }
+.img-div{
+  
+  flex-flow: row wrap;
+}
